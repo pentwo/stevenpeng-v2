@@ -58,10 +58,7 @@ export function Layout({ children }: LayoutProps) {
                 styles={(theme) => ({
                     //   paddingBottom: 20,
                     main: {
-                        backgroundColor:
-                            theme.colorScheme === "dark"
-                                ? theme.colors.dark[8]
-                                : theme.colors.gray[0],
+                        backgroundColor: theme.colors.teal[6],
                     },
                 })}
             >

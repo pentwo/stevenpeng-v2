@@ -22,7 +22,7 @@ const IndexPage: React.FC<PageProps> = () => {
                     <Grid.Col
                         span={4}
                         sx={(theme) => ({
-                            minHeight: "325vh",
+                            // minHeight: "250vh",
                             backgroundColor: theme.colors.teal[6],
                         })}
                     >
@@ -30,6 +30,12 @@ const IndexPage: React.FC<PageProps> = () => {
                             <Portrait />
                             <Experience />
                             <Interests />
+                            <Box
+                                h={"10vh"}
+                                sx={(theme) => ({
+                                    backgroundColor: theme.colors.teal[6],
+                                })}
+                            ></Box>
                         </Stack>
                     </Grid.Col>
 
@@ -38,7 +44,7 @@ const IndexPage: React.FC<PageProps> = () => {
                     <Grid.Col
                         span={8}
                         sx={(theme) => ({
-                            minHeight: "300vh",
+                            // minHeight: "225vh",
                         })}
                     >
                         <Stack
@@ -49,12 +55,12 @@ const IndexPage: React.FC<PageProps> = () => {
                         >
                             <Hero />
                             <Projects />
-                            <Box
+                            {/* <Box
                                 h={"50vh"}
                                 sx={(theme) => ({
                                     backgroundColor: theme.colors.teal[6],
                                 })}
-                            ></Box>
+                            ></Box> */}
                         </Stack>
                     </Grid.Col>
                 </Grid>
