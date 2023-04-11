@@ -13,7 +13,8 @@ const IndexPage: React.FC<PageProps> = () => {
     const desktop = useMediaQuery("(min-width: 56.25em)");
 
     return (
-        <Layout>
+        <>
+            {/* <Layout> */}
             {/*  */}
 
             {desktop ? (
@@ -78,7 +79,8 @@ const IndexPage: React.FC<PageProps> = () => {
                     <Interests />
                 </Stack>
             )}
-        </Layout>
+            {/* </Layout> */}
+        </>
     );
 };
 
