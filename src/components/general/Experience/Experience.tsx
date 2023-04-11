@@ -39,7 +39,7 @@ const Experience = (props: Props) => {
             })}
         >
             <Stack>
-                <Title order={2} size={desktop ? "h2" : "h3"}>
+                <Title order={2} size={desktop ? "h2" : "h3"} color="dark.2">
                     Experiences
                 </Title>
                 <Group
