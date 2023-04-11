@@ -13,36 +13,6 @@ interface LayoutProps {
     children: React.ReactNode;
 }
 
-const links = [
-    {
-        link: "/about",
-        label: "About",
-    },
-    {
-        link: "#1",
-        label: "Projects",
-        links: [
-            {
-                link: "/react",
-                label: "React.js",
-            },
-            {
-                link: "/gasby",
-                label: "Gatsby.js",
-            },
-            {
-                link: "/wordpress",
-                label: "Wordpress",
-            },
-        ],
-    },
-
-    {
-        link: "/contact",
-        label: "Contact",
-    },
-];
-
 export function Layout({ children }: LayoutProps) {
     const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
     const toggleColorScheme = (value?: ColorScheme) =>
@@ -51,44 +21,46 @@ export function Layout({ children }: LayoutProps) {
     useHotkeys([["mod+J", () => toggleColorScheme()]]);
 
     return (
-        <MantineProvider withGlobalStyles withNormalizeCSS theme={siteTheme}>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>Steven Peng's Portfolio</title>
+        <>
+            <MantineProvider withGlobalStyles withNormalizeCSS theme={siteTheme}>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Steven Peng's Portfolio</title>
 
-                <meta name="title" content="Steven Peng's Portfolio" />
-                <meta
-                    name="description"
-                    content=" Elevating web experiences with passion and expertise in cutting-edge technologies. Mastering responsive design across platforms through proficiency in HTML, CSS, JavaScript, React.js, and TypeScript."
-                />
+                    <meta name="title" content="Steven Peng's Portfolio" />
+                    <meta
+                        name="description"
+                        content=" Elevating web experiences with passion and expertise in cutting-edge technologies. Mastering responsive design across platforms through proficiency in HTML, CSS, JavaScript, React.js, and TypeScript."
+                    />
 
-                <meta property="og:title" content="Steven Peng's Portfolio" />
-                <meta property="og:site_name" content="Steven Peng's Portfolio" />
-                <meta property="og:type" content="porfolio" />
-                <meta property="og:url" content="https://www.stevenpeng.com.au/" />
-                <meta property="og:image" content={SiteImage} />
-                <meta property="og:locale" content="en_AU" />
-                <meta
-                    property="og:description"
-                    content=" Elevating web experiences with passion and expertise in cutting-edge technologies. Mastering responsive design across platforms through proficiency in HTML, CSS, JavaScript, React.js, and TypeScript."
-                />
-            </Helmet>
+                    <meta property="og:title" content="Steven Peng's Portfolio" />
+                    <meta property="og:site_name" content="Steven Peng's Portfolio" />
+                    <meta property="og:type" content="porfolio" />
+                    <meta property="og:url" content="https://www.stevenpeng.com.au/" />
+                    <meta property="og:image" content={SiteImage} />
+                    <meta property="og:locale" content="en_AU" />
+                    <meta
+                        property="og:description"
+                        content=" Elevating web experiences with passion and expertise in cutting-edge technologies. Mastering responsive design across platforms through proficiency in HTML, CSS, JavaScript, React.js, and TypeScript."
+                    />
+                </Helmet>
 
-            <AppShell
-                padding={0}
-                // navbar={<Navbar width={{ base: 300 }} height={500} p="xs">{/* Navbar content */}</Navbar>}
-                // header={<SPHeader links={links} />}
-                footer={<Footer />}
-                styles={(theme) => ({
-                    //   paddingBottom: 20,
-                    main: {
-                        backgroundColor: theme.colors.teal[6],
-                    },
-                })}
-            >
-                {/* <Space h={60} /> */}
-                {children}
-            </AppShell>
-        </MantineProvider>
+                <AppShell
+                    padding={0}
+                    // navbar={<Navbar width={{ base: 300 }} height={500} p="xs">{/* Navbar content */}</Navbar>}
+                    // header={<SPHeader links={links} />}
+                    footer={<Footer />}
+                    styles={(theme) => ({
+                        //   paddingBottom: 20,
+                        main: {
+                            backgroundColor: theme.colors.teal[6],
+                        },
+                    })}
+                >
+                    {/* <Space h={60} /> */}
+                    {children}
+                </AppShell>
+            </MantineProvider>
+        </>
     );
 }

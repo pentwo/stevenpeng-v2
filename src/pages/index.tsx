@@ -14,72 +14,72 @@ const IndexPage: React.FC<PageProps> = () => {
 
     return (
         <>
-            {/* <Layout> */}
-            {/*  */}
+            <Layout>
+                {/*  */}
 
-            {desktop ? (
-                <Grid gutter={0}>
-                    {/* LEFT PANEL */}
-                    <Grid.Col
-                        span={4}
-                        sx={(theme) => ({
-                            // minHeight: "250vh",
-                            backgroundColor: theme.colors.teal[6],
-                        })}
-                    >
-                        <Stack spacing={0}>
-                            <Portrait />
-                            <Experience />
-                            <Interests />
-                            <Box
-                                h={"10vh"}
-                                sx={(theme) => ({
-                                    backgroundColor: theme.colors.teal[6],
-                                })}
-                            ></Box>
-                        </Stack>
-                    </Grid.Col>
-
-                    {/* RIGHT PANEL */}
-
-                    <Grid.Col
-                        span={8}
-                        sx={(theme) => ({
-                            // minHeight: "225vh",
-                        })}
-                    >
-                        <Stack
-                            spacing={0}
+                {desktop ? (
+                    <Grid gutter={0}>
+                        {/* LEFT PANEL */}
+                        <Grid.Col
+                            span={4}
                             sx={(theme) => ({
+                                // minHeight: "250vh",
                                 backgroundColor: theme.colors.teal[6],
                             })}
                         >
-                            <Hero />
-                            <Projects />
-                            {/* <Box
+                            <Stack spacing={0}>
+                                <Portrait />
+                                <Experience />
+                                <Interests />
+                                <Box
+                                    h={"10vh"}
+                                    sx={(theme) => ({
+                                        backgroundColor: theme.colors.teal[6],
+                                    })}
+                                ></Box>
+                            </Stack>
+                        </Grid.Col>
+
+                        {/* RIGHT PANEL */}
+
+                        <Grid.Col
+                            span={8}
+                            sx={(theme) => ({
+                                // minHeight: "225vh",
+                            })}
+                        >
+                            <Stack
+                                spacing={0}
+                                sx={(theme) => ({
+                                    backgroundColor: theme.colors.teal[6],
+                                })}
+                            >
+                                <Hero />
+                                <Projects />
+                                {/* <Box
                                 h={"50vh"}
                                 sx={(theme) => ({
                                     backgroundColor: theme.colors.teal[6],
                                 })}
                             ></Box> */}
-                        </Stack>
-                    </Grid.Col>
-                </Grid>
-            ) : (
-                <Stack
-                    spacing={0}
-                    sx={(theme) => ({
-                        backgroundColor: theme.colors.teal[6],
-                    })}
-                >
-                    <Portrait />
-                    <Hero />
-                    <Experience />
-                    <Projects />
-                    <Interests />
-                </Stack>
-            )}
-            {/* </Layout> */}
+                            </Stack>
+                        </Grid.Col>
+                    </Grid>
+                ) : (
+                    <Stack
+                        spacing={0}
+                        sx={(theme) => ({
+                            backgroundColor: theme.colors.teal[6],
+                        })}
+                    >
+                        <Portrait />
+                        <Hero />
+                        <Experience />
+                        <Projects />
+                        <Interests />
+                    </Stack>
+                )}
+            </Layout>
         </>
     );
 };
