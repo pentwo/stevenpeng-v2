@@ -3,6 +3,8 @@ import { useHotkeys } from "@mantine/hooks";
 import { MantineProvider, ColorSchemeProvider, ColorScheme, AppShell, Space } from "@mantine/core";
 import { siteTheme } from "../styles/siteTheme";
 import SPHeader from "./Header";
+import { Helmet } from "react-helmet";
+import SiteImage from "../images/site-image.png";
 
 // import "../../styles/index.css";
 import Footer from "./Footer";
@@ -50,6 +52,22 @@ export function Layout({ children }: LayoutProps) {
 
     return (
         <MantineProvider withGlobalStyles withNormalizeCSS theme={siteTheme}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Steven Peng's Portfolio</title>
+
+                <meta property="og:title" content="Steven Peng's Portfolio" />
+                <meta property="og:site_name" content="Steven Peng's Portfolio" />
+                <meta property="og:type" content="porfolio" />
+                <meta property="og:url" content="https://www.stevenpeng.com.au/" />
+                <meta property="og:image" content={SiteImage} />
+                <meta property="og:locale" content="en_AU" />
+                <meta
+                    property="og:description"
+                    content=" Elevating web experiences with passion and expertise in cutting-edge technologies. Mastering responsive design across platforms through proficiency in HTML, CSS, JavaScript, React.js, and TypeScript."
+                />
+            </Helmet>
+
             <AppShell
                 padding={0}
                 // navbar={<Navbar width={{ base: 300 }} height={500} p="xs">{/* Navbar content */}</Navbar>}
