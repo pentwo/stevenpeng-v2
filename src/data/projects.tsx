@@ -1,20 +1,20 @@
 import { tech } from "./tech";
-import asone_1 from "../images/projects/asone/asone-01.png";
-import asone_2 from "../images/projects/asone/asone-02.png";
-import asone_3 from "../images/projects/asone/asone-03.png";
-import asone_4 from "../images/projects/asone/asone-04.png";
-import numero_1 from "../images/projects/numero/numero-01.png";
-import numero_2 from "../images/projects/numero/numero-02.png";
-import numero_3 from "../images/projects/numero/numero-03.png";
-import numero_4 from "../images/projects/numero/numero-04.png";
-import numero_5 from "../images/projects/numero/numero-05.png";
-import numero_6 from "../images/projects/numero/numero-06.png";
-import podcastplayer_1 from "../images/projects/podcastplayer/podcastplayer-01.png";
-import podcastplayer_2 from "../images/projects/podcastplayer/podcastplayer-02.png";
-import podcastplayer_3 from "../images/projects/podcastplayer/podcastplayer-03.png";
-import podcastplayer_4 from "../images/projects/podcastplayer/podcastplayer-04.png";
-import bucketlist_1 from "../images/projects/bucketlist/bucketlist-01.png";
-import bucketlist_2 from "../images/projects/bucketlist/bucketlist-02.png";
+import asone_1 from "../images/projects/asone/asone-01.webp";
+import asone_2 from "../images/projects/asone/asone-02.webp";
+import asone_3 from "../images/projects/asone/asone-03.webp";
+import asone_4 from "../images/projects/asone/asone-04.webp";
+import numero_1 from "../images/projects/numero/numero-01.webp";
+import numero_2 from "../images/projects/numero/numero-02.webp";
+import numero_3 from "../images/projects/numero/numero-03.webp";
+import numero_4 from "../images/projects/numero/numero-04.webp";
+import numero_5 from "../images/projects/numero/numero-05.webp";
+import numero_6 from "../images/projects/numero/numero-06.webp";
+import podcastplayer_1 from "../images/projects/podcastplayer/podcastplayer-01.webp";
+import podcastplayer_2 from "../images/projects/podcastplayer/podcastplayer-02.webp";
+import podcastplayer_3 from "../images/projects/podcastplayer/podcastplayer-03.webp";
+import podcastplayer_4 from "../images/projects/podcastplayer/podcastplayer-04.webp";
+import bucketlist_1 from "../images/projects/bucketlist/bucketlist-01.webp";
+import bucketlist_2 from "../images/projects/bucketlist/bucketlist-02.webp";
 
 export interface IProject {
     name: string;

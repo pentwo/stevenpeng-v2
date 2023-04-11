@@ -16,8 +16,8 @@ import React from "react";
 // FUNCTION IMPORTS
 
 // STYLE IMPORTS
-import portraitBackground from "../../../images/portrait-background.png";
-import avatar from "../../../images/avatar.png";
+import portraitBackground from "../../../images/portrait-background.webp";
+import avatar from "../../../images/avatar.webp";
 import { useMediaQuery } from "@mantine/hooks";
 
 interface Props {}
