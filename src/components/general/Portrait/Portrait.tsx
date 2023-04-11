@@ -46,7 +46,7 @@ const Portrait = (props: Props) => {
                         width: desktop ? "80%" : "50%",
                     })}
                 >
-                    <Image src={avatar} fit="cover" />
+                    <Image w={350} src={avatar} fit="cover" alt="Steven Peng's portrait image" />
                 </Box>
             </Stack>
         </BackgroundImage>

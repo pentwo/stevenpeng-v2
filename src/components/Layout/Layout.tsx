@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { useHotkeys } from "@mantine/hooks";
-import { MantineProvider, ColorSchemeProvider, ColorScheme, AppShell, Space } from "@mantine/core";
+import {
+    MantineProvider,
+    ColorSchemeProvider,
+    ColorScheme,
+    AppShell,
+    Space,
+    useMantineTheme,
+} from "@mantine/core";
 import { siteTheme } from "../styles/siteTheme";
 import SPHeader from "./Header";
 import { Helmet } from "react-helmet";
@@ -19,6 +26,7 @@ export function Layout({ children }: LayoutProps) {
         setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 
     useHotkeys([["mod+J", () => toggleColorScheme()]]);
+    const theme = useMantineTheme();
 
     return (
         <>
@@ -32,6 +40,8 @@ export function Layout({ children }: LayoutProps) {
                         name="description"
                         content=" Elevating web experiences with passion and expertise in cutting-edge technologies. Mastering responsive design across platforms through proficiency in HTML, CSS, JavaScript, React.js, and TypeScript."
                     />
+                    <meta property="background_color" content={theme.colors.teal[3]} />
+                    <meta property="theme_color" content={theme.colors.teal[6]} />
 
                     <meta property="og:title" content="Steven Peng's Portfolio" />
                     <meta property="og:site_name" content="Steven Peng's Portfolio" />

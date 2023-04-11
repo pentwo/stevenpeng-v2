@@ -62,8 +62,11 @@ const SkillCard = ({ skill }: Props) => {
                             <Badge
                                 variant="filled"
                                 key={index}
-                                color="orange.9"
+                                color="orange.6"
                                 size={desktop ? "md" : "sm"}
+                                sx={(theme) => ({
+                                    color: theme.black,
+                                })}
                             >
                                 <Group spacing={8}>
                                     {item.icon && item.icon}
@@ -72,7 +75,13 @@ const SkillCard = ({ skill }: Props) => {
                             </Badge>
                         );
                     })}
-                    <Badge variant="filled" color="orange.9">
+                    <Badge
+                        variant="filled"
+                        color="orange.6"
+                        sx={(theme) => ({
+                            color: theme.black,
+                        })}
+                    >
                         ...
                     </Badge>
                 </Group>

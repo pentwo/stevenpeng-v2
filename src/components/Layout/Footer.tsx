@@ -48,6 +48,7 @@ function Footer() {
                 <Group spacing={0} className={classes.links} position="right" noWrap>
                     <ActionIcon
                         component="a"
+                        aria-label="Link to Steven Peng's LinkedIn profile"
                         size="lg"
                         href="https://www.linkedin.com/in/steven-peng/"
                         target="_blank"
@@ -56,6 +57,7 @@ function Footer() {
                     </ActionIcon>
                     <ActionIcon
                         component="a"
+                        aria-label="Link to Steven Peng's Github profile"
                         size="lg"
                         href="https://github.com/pentwo/"
                         target="_blank"
@@ -64,6 +66,7 @@ function Footer() {
                     </ActionIcon>
                     <ActionIcon
                         component="a"
+                        aria-label="Link to Steven Peng's Twitter profile"
                         size="lg"
                         href="https://twitter.com/pentwo/"
                         target="_blank"

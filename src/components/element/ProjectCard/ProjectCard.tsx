@@ -133,6 +133,7 @@ const ProjectCard = ({ project }: Props) => {
                                 {project.images.desktop.map((image, index) => {
                                     return (
                                         <ImageWithHover
+                                            alt={`${project.name} screenshot - ${index}`}
                                             key={index}
                                             imageUrl={image}
                                             onClick={() => {
@@ -210,12 +211,20 @@ const ScreenshotModal = ({ title, image, opened, close }: IModalProps) => {
             centered
         >
             {/* Modal content */}
-            <Image src={image} />
+            <Image src={image} alt={`${title} - Screenshot`} />
         </Modal>
     );
 };
 
-const ImageWithHover = ({ imageUrl, onClick }: { imageUrl: string; onClick: () => void }) => {
+const ImageWithHover = ({
+    imageUrl,
+    alt,
+    onClick,
+}: {
+    imageUrl: string;
+    alt: string;
+    onClick: () => void;
+}) => {
     const { hovered, ref } = useHover();
 
     return (
@@ -243,6 +252,8 @@ const ImageWithHover = ({ imageUrl, onClick }: { imageUrl: string; onClick: () =
                 )}
             </Transition>
             <Image
+                alt={alt}
+                w={100}
                 sx={(theme) => ({
                     boxShadow: hovered ? theme.shadows.xl : theme.shadows.xs,
                 })}
