@@ -21,19 +21,7 @@ import React, { useEffect, useState } from "react";
 import { IProject } from "../../../data/projects";
 import { useDisclosure, useHover, useMediaQuery } from "@mantine/hooks";
 
-// NEXT IMPORTS
-
-// COMPONENT IMPORTS
-
-// MANTINE IMPORTS
-
-// NETWORK IMPORTS
-
-// TYPE IMPORTS
-
-// FUNCTION IMPORTS
-
-// STYLE IMPORTS
+const DESKTOP_MQ = "@media (min-width: 56.25em)";
 
 interface Props {
     project: IProject;
@@ -42,8 +30,6 @@ interface Props {
 const ProjectCard = ({ project }: Props) => {
     const [opened, { open, close }] = useDisclosure(false);
     const [currentImage, setCurrentImage] = useState<string>("");
-
-    const desktop = useMediaQuery("(min-width: 56.25em)");
 
     useEffect(() => {
         if (currentImage !== "") {
@@ -68,8 +54,9 @@ const ProjectCard = ({ project }: Props) => {
                 <Stack>
                     <Title
                         order={4}
-                        size={desktop ? "h4" : "h5"}
                         sx={(theme) => ({
+                            fontSize: "16px",
+                            [DESKTOP_MQ]: { fontSize: "20px" },
                             padding: "5px 10px",
                             borderRadius: 5,
                             position: "absolute",
@@ -88,11 +75,24 @@ const ProjectCard = ({ project }: Props) => {
                         {project.name}
                     </Title>
                     {project.description && (
-                        <Text size={desktop ? 16 : 13}>{project.description}</Text>
+                        <Text
+                            sx={{
+                                fontSize: "13px",
+                                [DESKTOP_MQ]: { fontSize: "16px" },
+                            }}
+                        >
+                            {project.description}
+                        </Text>
                     )}
 
                     {/* Check Points */}
-                    <List withPadding size={desktop ? 16 : 14}>
+                    <List
+                        withPadding
+                        sx={{
+                            fontSize: "14px",
+                            [DESKTOP_MQ]: { fontSize: "16px" },
+                        }}
+                    >
                         {project.checkPoints?.map((checkPoint, index) => {
                             return <List.Item key={index}>{checkPoint}</List.Item>;
                         })}
@@ -129,7 +129,10 @@ const ProjectCard = ({ project }: Props) => {
                             <Title order={5} mb={20}>
                                 Screenshots
                             </Title>
-                            <SimpleGrid cols={desktop ? 6 : 3}>
+                            <SimpleGrid
+                                cols={3}
+                                breakpoints={[{ minWidth: "56.25em", cols: 6 }]}
+                            >
                                 {project.images.desktop.map((image, index) => {
                                     return (
                                         <ImageWithHover

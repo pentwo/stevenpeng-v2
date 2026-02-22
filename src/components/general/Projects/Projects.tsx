@@ -4,27 +4,12 @@ import { Box, Title } from "@mantine/core";
 import React from "react";
 import ProjectCard from "../../element/ProjectCard/ProjectCard";
 import { projects, sideProjects } from "../../../data/projects";
-import { useMediaQuery } from "@mantine/hooks";
 
-// NEXT IMPORTS
-
-// COMPONENT IMPORTS
-
-// MANTINE IMPORTS
-
-// NETWORK IMPORTS
-
-// TYPE IMPORTS
-
-// FUNCTION IMPORTS
-
-// STYLE IMPORTS
+const DESKTOP_MQ = "@media (min-width: 56.25em)";
 
 interface Props {}
 
 const Projects = (props: Props) => {
-    const desktop = useMediaQuery("(min-width: 56.25em)");
-
     return (
         <Box
             p={30}
@@ -38,7 +23,14 @@ const Projects = (props: Props) => {
                 borderRadius: `0 0 0 ${theme.radius.xl}`,
             })}
         >
-            <Title order={2} size={desktop ? "h2" : "h3"} mb={30}>
+            <Title
+                order={2}
+                mb={30}
+                sx={{
+                    fontSize: "34px",
+                    [DESKTOP_MQ]: { fontSize: "42px" },
+                }}
+            >
                 Projects
             </Title>
             {projects.map((project, index) => {

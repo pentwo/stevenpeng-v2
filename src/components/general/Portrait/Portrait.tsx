@@ -3,34 +3,24 @@
 import { BackgroundImage, Box, Center, Image, Stack } from "@mantine/core";
 import React from "react";
 
-// NEXT IMPORTS
-
-// COMPONENT IMPORTS
-
-// MANTINE IMPORTS
-
-// NETWORK IMPORTS
-
-// TYPE IMPORTS
-
-// FUNCTION IMPORTS
-
 // STYLE IMPORTS
 import portraitBackground from "../../../images/portrait-background.webp";
 import avatar from "../../../images/avatar.webp";
-import { useMediaQuery } from "@mantine/hooks";
+
+const DESKTOP_MQ = "@media (min-width: 56.25em)";
 
 interface Props {}
 
 const Portrait = (props: Props) => {
-    const desktop = useMediaQuery("(min-width: 56.25em)");
-
     return (
         <BackgroundImage
             src={portraitBackground}
             sx={(theme) => ({
                 position: "relative",
-                height: desktop ? "50vh" : "30vh",
+                height: "30vh",
+                [DESKTOP_MQ]: {
+                    height: "50vh",
+                },
             })}
         >
             <Stack
@@ -43,7 +33,10 @@ const Portrait = (props: Props) => {
             >
                 <Box
                     sx={(theme) => ({
-                        width: desktop ? "80%" : "50%",
+                        width: "50%",
+                        [DESKTOP_MQ]: {
+                            width: "80%",
+                        },
                     })}
                 >
                     <Image w={350} src={avatar} fit="cover" alt="Steven Peng's portrait image" />
