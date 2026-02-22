@@ -1,23 +1,10 @@
 // REACT IMPORTS
 
 import { Box, Paper, Title, Text, Blockquote } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
 import { IconChevronRight } from "@tabler/icons-react";
 import React from "react";
 
-// NEXT IMPORTS
-
-// COMPONENT IMPORTS
-
-// MANTINE IMPORTS
-
-// NETWORK IMPORTS
-
-// TYPE IMPORTS
-
-// FUNCTION IMPORTS
-
-// STYLE IMPORTS
+const DESKTOP_MQ = "@media (min-width: 56.25em)";
 
 interface Props {}
 
@@ -39,8 +26,6 @@ const interests: IInterest[] = [
 ];
 
 const Interests = (props: Props) => {
-    const desktop = useMediaQuery("(min-width: 56.25em)");
-
     return (
         <Box
             p={30}
@@ -53,7 +38,14 @@ const Interests = (props: Props) => {
                 borderRadius: `0 0 ${theme.radius.xl} 0`,
             })}
         >
-            <Title order={2} size={desktop ? "h2" : "h3"} mb={30}>
+            <Title
+                order={2}
+                mb={30}
+                sx={{
+                    fontSize: "34px",
+                    [DESKTOP_MQ]: { fontSize: "42px" },
+                }}
+            >
                 Interests
             </Title>
             {interests.map((interest, index) => {
@@ -73,8 +65,6 @@ interface IInterest {
 }
 
 const Interest = ({ name, description, since, icon }: IInterest) => {
-    const desktop = useMediaQuery("(min-width: 56.25em)");
-
     return (
         <Paper
             p="md"
@@ -89,7 +79,13 @@ const Interest = ({ name, description, since, icon }: IInterest) => {
                 ),
             })}
         >
-            <Title order={4} size={desktop ? "h4" : "h5"}>
+            <Title
+                order={4}
+                sx={{
+                    fontSize: "16px",
+                    [DESKTOP_MQ]: { fontSize: "20px" },
+                }}
+            >
                 {icon ?? null} {name}
             </Title>
             <Blockquote

@@ -3,21 +3,8 @@
 import { Badge, Grid, Group, Stack, Title } from "@mantine/core";
 import React from "react";
 import { ITech } from "../../../data/tech";
-import { useMediaQuery } from "@mantine/hooks";
 
-// NEXT IMPORTS
-
-// COMPONENT IMPORTS
-
-// MANTINE IMPORTS
-
-// NETWORK IMPORTS
-
-// TYPE IMPORTS
-
-// FUNCTION IMPORTS
-
-// STYLE IMPORTS
+const DESKTOP_MQ = "@media (min-width: 56.25em)";
 
 interface Props {
     skill: {
@@ -28,8 +15,6 @@ interface Props {
 }
 
 const SkillCard = ({ skill }: Props) => {
-    const desktop = useMediaQuery("(min-width: 56.25em)");
-
     return (
         // <Group position="apart" noWrap>
         <Grid>
@@ -46,7 +31,13 @@ const SkillCard = ({ skill }: Props) => {
                     })}
                 >
                     <Group noWrap>
-                        <Title order={4} size={desktop ? "h4" : "h5"}>
+                        <Title
+                            order={4}
+                            sx={{
+                                fontSize: "16px",
+                                [DESKTOP_MQ]: { fontSize: "20px" },
+                            }}
+                        >
                             {skill.name}
                         </Title>
                         {skill.icon}
@@ -63,9 +54,15 @@ const SkillCard = ({ skill }: Props) => {
                                 variant="filled"
                                 key={index}
                                 color="orange.6"
-                                size={desktop ? "md" : "sm"}
+                                size="sm"
                                 sx={(theme) => ({
                                     color: theme.black,
+                                    [DESKTOP_MQ]: {
+                                        fontSize: "13px",
+                                        height: "26px",
+                                        paddingLeft: "10px",
+                                        paddingRight: "10px",
+                                    },
                                 })}
                             >
                                 <Group spacing={8}>

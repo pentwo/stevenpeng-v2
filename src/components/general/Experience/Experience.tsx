@@ -4,27 +4,12 @@ import { Box, Divider, Group, Stack, Title } from "@mantine/core";
 import React from "react";
 import ExperienceCard from "../../element/ExperienceCard/ExperienceCard";
 import { experience } from "../../../data/experience";
-import { useMediaQuery } from "@mantine/hooks";
 
-// NEXT IMPORTS
-
-// COMPONENT IMPORTS
-
-// MANTINE IMPORTS
-
-// NETWORK IMPORTS
-
-// TYPE IMPORTS
-
-// FUNCTION IMPORTS
-
-// STYLE IMPORTS
+const DESKTOP_MQ = "@media (min-width: 56.25em)";
 
 interface Props {}
 
 const Experience = (props: Props) => {
-    const desktop = useMediaQuery("(min-width: 56.25em)");
-
     return (
         <Box
             p={30}
@@ -39,7 +24,14 @@ const Experience = (props: Props) => {
             })}
         >
             <Stack>
-                <Title order={2} size={desktop ? "h2" : "h3"} color="dark.2">
+                <Title
+                    order={2}
+                    color="dark.2"
+                    sx={{
+                        fontSize: "34px",
+                        [DESKTOP_MQ]: { fontSize: "42px" },
+                    }}
+                >
                     Experiences
                 </Title>
                 <Group
@@ -48,14 +40,30 @@ const Experience = (props: Props) => {
                     })}
                     noWrap
                 >
-                    <Divider orientation="vertical" size={desktop ? "md" : "sm"} />
-                    <Stack spacing={desktop ? 50 : 20}>
+                    <Divider
+                        orientation="vertical"
+                        sx={{
+                            borderWidth: "1px",
+                            [DESKTOP_MQ]: { borderWidth: "2px" },
+                        }}
+                    />
+                    <Stack
+                        sx={{
+                            gap: "20px",
+                            [DESKTOP_MQ]: { gap: "50px" },
+                        }}
+                    >
                         {experience.map((exp, index) => {
                             return (
                                 <React.Fragment key={`ECard-${index}`}>
                                     <ExperienceCard experience={exp} />
                                     {index !== experience.length - 1 && (
-                                        <Divider size={desktop ? "md" : "sm"} />
+                                        <Divider
+                                            sx={{
+                                                borderWidth: "1px",
+                                                [DESKTOP_MQ]: { borderWidth: "2px" },
+                                            }}
+                                        />
                                     )}
                                 </React.Fragment>
                             );

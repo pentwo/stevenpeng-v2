@@ -3,27 +3,29 @@ import type { HeadFC, PageProps } from "gatsby";
 import { Layout } from "../components/Layout/Layout";
 import Hero from "../components/general/Hero/Hero";
 import Portrait from "../components/general/Portrait/Portrait";
-import { Box, Grid, SimpleGrid, Stack } from "@mantine/core";
+import { Box, Grid, Stack } from "@mantine/core";
 import Experience from "../components/general/Experience/Experience";
 import Projects from "../components/general/Projects/Projects";
 import Interests from "../components/general/Interests/Interests";
-import { useMediaQuery } from "@mantine/hooks";
+
+const DESKTOP_MQ = "@media (min-width: 56.25em)";
 
 const IndexPage: React.FC<PageProps> = () => {
-    const desktop = useMediaQuery("(min-width: 56.25em)");
-
     return (
         <>
             <Layout>
-                {/*  */}
-
-                {desktop ? (
+                {/* Desktop layout */}
+                <Box
+                    sx={{
+                        display: "none",
+                        [DESKTOP_MQ]: { display: "block" },
+                    }}
+                >
                     <Grid gutter={0}>
                         {/* LEFT PANEL */}
                         <Grid.Col
                             span={4}
                             sx={(theme) => ({
-                                // minHeight: "250vh",
                                 backgroundColor: theme.colors.teal[6],
                             })}
                         >
@@ -41,13 +43,7 @@ const IndexPage: React.FC<PageProps> = () => {
                         </Grid.Col>
 
                         {/* RIGHT PANEL */}
-
-                        <Grid.Col
-                            span={8}
-                            sx={(theme) => ({
-                                // minHeight: "225vh",
-                            })}
-                        >
+                        <Grid.Col span={8}>
                             <Stack
                                 spacing={0}
                                 sx={(theme) => ({
@@ -56,16 +52,17 @@ const IndexPage: React.FC<PageProps> = () => {
                             >
                                 <Hero />
                                 <Projects />
-                                {/* <Box
-                                h={"50vh"}
-                                sx={(theme) => ({
-                                    backgroundColor: theme.colors.teal[6],
-                                })}
-                            ></Box> */}
                             </Stack>
                         </Grid.Col>
                     </Grid>
-                ) : (
+                </Box>
+
+                {/* Mobile layout */}
+                <Box
+                    sx={{
+                        [DESKTOP_MQ]: { display: "none" },
+                    }}
+                >
                     <Stack
                         spacing={0}
                         sx={(theme) => ({
@@ -78,7 +75,7 @@ const IndexPage: React.FC<PageProps> = () => {
                         <Projects />
                         <Interests />
                     </Stack>
-                )}
+                </Box>
             </Layout>
         </>
     );
