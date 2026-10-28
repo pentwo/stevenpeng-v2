@@ -38,6 +38,27 @@ interface ITechStack {
 
 export const projects: IProject[] = [
     {
+        name: "Integrity — Asset Management Platform",
+        description:
+            "At InnoTECHT I lead the design and development of Integrity, an industrial asset management platform for corrosion management and asset integrity monitoring. Areas I own include:",
+        checkPoints: [
+            "Asset management core: a unified asset hierarchy with inspections, issues and reporting shared across the platform's integrity services.",
+            "Live IoT data: an MQTT pipeline that streams readings from field devices into the platform for near-real-time monitoring.",
+            "Platform foundations: Python/FastAPI services on PostgreSQL, a React/Next.js front end, AWS Cognito authentication and containerised deployment on AWS.",
+        ],
+        techStack: [
+            tech.react,
+            tech.typeScript,
+            tech.nextjs,
+            tech.python,
+            tech.fastapi,
+            tech.postgres,
+            tech.mqtt,
+            tech.docker,
+            tech.aws,
+        ],
+    },
+    {
         name: "Educational Game Management Portal",
         description:
             "I designed and developed a front-end portal with key features: system admin can create school entities; school admin can add teachers, classes, and students, and view performance reports; and teachers can add classes and students, and track their performance. It offers an efficient and user-friendly experience for managing student performance in the game, and I believe it will contribute significantly to the project's success.",
@@ -63,6 +84,26 @@ export const projects: IProject[] = [
 ];
 
 export const sideProjects: IProject[] = [
+    {
+        name: "Family Ledger",
+        description: "",
+        checkPoints: [
+            "Self-hosted household finance app that ingests credit-card statement PDFs and turns them into a reconciled ledger.",
+            "Classifies each transaction's owner and category with a rule engine and merchant history, falling back to a local LLM (Ollama) for the leftovers.",
+            "Reconciles parsed rows to the statement total to the cent before committing, then tracks who owes what per statement period.",
+            "FastAPI + SQLAlchemy backend, React + Mantine front end, PostgreSQL and Ollama running in Docker on a home server.",
+        ],
+        techStack: [
+            tech.python,
+            tech.fastapi,
+            tech.react,
+            tech.typeScript,
+            tech.mantine,
+            tech.postgres,
+            tech.docker,
+            tech.ollama,
+        ],
+    },
     {
         name: "Perth Bucket List Web App",
         description: "",

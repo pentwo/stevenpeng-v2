@@ -82,7 +82,7 @@ const Hero = (props: Props) => {
                             [DESKTOP_MQ]: { fontSize: "34px" },
                         }}
                     >
-                        A Frontend Developer
+                        Software Lead · Full-stack Engineer
                     </Title>
 
                     <Text
@@ -91,9 +91,10 @@ const Hero = (props: Props) => {
                             [DESKTOP_MQ]: { fontSize: "20px" },
                         }}
                     >
-                        Elevating web experiences with passion and expertise in cutting-edge
-                        technologies. Mastering responsive design across platforms through
-                        proficiency in HTML, CSS, JavaScript, React.js, and TypeScript.
+                        I design, build and run industrial SaaS platforms end to end — from
+                        React and Next.js front ends to Python/FastAPI services, IoT data
+                        pipelines and the AWS infrastructure underneath. Based in Perth,
+                        Western Australia.
                     </Text>
 
                     <Space h={"xl"} />

@@ -1,4 +1,4 @@
-import { IconBrandReact, IconBrandPhp, IconCloud } from "@tabler/icons-react";
+import { IconBrandReact, IconBrandPython, IconCloud } from "@tabler/icons-react";
 import { ITech, tech } from "./tech";
 import React from "react";
 
@@ -11,29 +11,36 @@ export const skills: {
     name: "Front End",
     icon: <IconBrandReact />,
     items: [
-      tech.html,
-      tech.css,
       tech.react,
       tech.typeScript,
-      tech.javaScript,
       tech.nextjs,
+      tech.javaScript,
+      tech.mantine,
+      tech.tailwind,
     ],
   },
   {
     name: "Back End",
-    icon: <IconBrandPhp />,
+    icon: <IconBrandPython />,
     items: [
+      tech.python,
+      tech.fastapi,
+      tech.postgres,
       tech.node,
-      tech.php,
-      tech.laravel,
-      tech.express,
       tech.mysql,
-      tech.mongodb,
+      tech.laravel,
     ],
   },
   {
-    name: "Cloud services",
+    name: "Cloud & Infra",
     icon: <IconCloud />,
-    items: [tech.aws, tech.firebase, tech.gcp],
+    items: [
+      tech.aws,
+      tech.docker,
+      tech.linux,
+      tech.mqtt,
+      tech.cloudflare,
+      tech.tailscale,
+    ],
   },
 ];

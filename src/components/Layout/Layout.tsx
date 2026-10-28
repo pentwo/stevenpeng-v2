@@ -38,7 +38,7 @@ export function Layout({ children }: LayoutProps) {
                     <meta name="title" content="Steven Peng's Portfolio" />
                     <meta
                         name="description"
-                        content=" Elevating web experiences with passion and expertise in cutting-edge technologies. Mastering responsive design across platforms through proficiency in HTML, CSS, JavaScript, React.js, and TypeScript."
+                        content="Steven Peng — Software Lead and full-stack engineer in Perth, Western Australia. I design, build and run industrial SaaS platforms: React/Next.js, Python/FastAPI, IoT data pipelines and AWS."
                     />
                     <meta property="background_color" content={theme.colors.teal[3]} />
                     <meta property="theme_color" content={theme.colors.teal[6]} />
@@ -51,7 +51,7 @@ export function Layout({ children }: LayoutProps) {
                     <meta property="og:locale" content="en_AU" />
                     <meta
                         property="og:description"
-                        content=" Elevating web experiences with passion and expertise in cutting-edge technologies. Mastering responsive design across platforms through proficiency in HTML, CSS, JavaScript, React.js, and TypeScript."
+                        content="Steven Peng — Software Lead and full-stack engineer in Perth, Western Australia. I design, build and run industrial SaaS platforms: React/Next.js, Python/FastAPI, IoT data pipelines and AWS."
                     />
                 </Helmet>
 

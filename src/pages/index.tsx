@@ -7,6 +7,7 @@ import { Box } from "@mantine/core";
 import Experience from "../components/general/Experience/Experience";
 import Projects from "../components/general/Projects/Projects";
 import Interests from "../components/general/Interests/Interests";
+import Education from "../components/general/Education/Education";
 
 const DESKTOP_MQ = "@media (min-width: 56.25em)";
 
@@ -38,10 +39,13 @@ const IndexPage: React.FC<PageProps> = () => {
                         <Box sx={{ order: 3 }}>
                             <Experience />
                         </Box>
-                        <Box sx={{ order: 5 }}>
+                        <Box sx={{ order: 4 }}>
+                            <Education />
+                        </Box>
+                        <Box sx={{ order: 6 }}>
                             <Interests />
                         </Box>
-                        <Box h="10vh" sx={{ order: 6, display: "none", [DESKTOP_MQ]: { display: "block" } }} />
+                        <Box h="10vh" sx={{ order: 7, display: "none", [DESKTOP_MQ]: { display: "block" } }} />
                     </Box>
 
                     {/* RIGHT PANEL */}
@@ -49,7 +53,7 @@ const IndexPage: React.FC<PageProps> = () => {
                         <Box sx={{ order: 2 }}>
                             <Hero />
                         </Box>
-                        <Box sx={{ order: 4 }}>
+                        <Box sx={{ order: 5 }}>
                             <Projects />
                         </Box>
                     </Box>

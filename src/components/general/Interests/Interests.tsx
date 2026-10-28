@@ -12,16 +12,34 @@ const interests: IInterest[] = [
     {
         name: "Scout Leader",
         description:
-            "I am a scout leader for a local scout group. I have been a scout leader for 5 years and have been a scout for more than 15 years.",
+            "Scout Leader with a local group since 2016, and involved in Scouting for more than 15 years. These days that mostly means planning camps, sorting logistics and keeping families in the loop.",
         since: "2016",
         icon: <>🏕</>,
     },
     {
         name: "Rock Climbing",
         description:
-            "I have been rock climbing for 3 years and actively gather with other climbers to climb and learn new techniques.",
+            "Climbing since 2020 — I regularly get together with other climbers to train, share routes and pick up new techniques.",
         since: "2020",
         icon: <>🧗‍♀️</>,
+    },
+    {
+        name: "3D Printing",
+        description:
+            "Designing and printing functional parts, fixes and the odd gadget — usually something around the house that needed a bracket yesterday.",
+        icon: <>🖨️</>,
+    },
+    {
+        name: "Homelab",
+        description:
+            "A small self-hosted setup at home running Docker services — home automation, DNS filtering, dashboards and a few tools I built myself — reachable securely from anywhere.",
+        icon: <>🖥️</>,
+    },
+    {
+        name: "Cooking",
+        description:
+            "Taiwanese home cooking: recreating the dishes I grew up with in a Perth kitchen.",
+        icon: <>🍜</>,
     },
 ];
 
@@ -60,7 +78,7 @@ export default Interests;
 interface IInterest {
     name: string;
     description: string;
-    since: string;
+    since?: string;
     icon?: React.ReactNode;
 }
 
@@ -90,7 +108,7 @@ const Interest = ({ name, description, since, icon }: IInterest) => {
             </Title>
             <Blockquote
                 icon={<IconChevronRight />}
-                cite={`since ${since}`}
+                cite={since ? `since ${since}` : undefined}
                 sx={(theme) => ({
                     fontSize: theme.fontSizes.sm,
                 })}

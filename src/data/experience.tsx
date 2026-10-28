@@ -16,6 +16,18 @@ export interface IExperience {
 }
 export const experience: IExperience[] = [
   {
+    name: "InnoTECHT",
+    position: "Software Lead",
+    jobDuties: [
+      "Lead the architecture and development of Integrity, an industrial asset management platform for corrosion management and asset integrity monitoring, used by clients in the mining and marine sectors.",
+      "Own the platform end to end: React/Next.js front end, Python/FastAPI services on PostgreSQL, and containerised deployment on AWS.",
+      "Designed and built the MQTT-based IoT pipeline that streams live sensor data from field devices into the platform.",
+      "Responsible for authentication, security hardening and day-to-day operation of the production environment.",
+      "Set technical direction and code-review standards for the development team.",
+    ],
+    timeSpan: "May 2024 - Present",
+  },
+  {
     name: "Bluesky Digital Labs",
     position: "Software Developer",
     jobDuties: [

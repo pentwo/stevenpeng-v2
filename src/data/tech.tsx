@@ -1,7 +1,10 @@
 import {
-  IconBrandAmazon,
+  IconApi,
+  IconBrandAws,
+  IconBrandCloudflare,
   IconBrandCss3,
   IconBrandDjango,
+  IconBrandDocker,
   IconBrandFirebase,
   IconBrandGoogle,
   IconBrandHtml5,
@@ -11,11 +14,17 @@ import {
   IconBrandMongodb,
   IconBrandMysql,
   IconBrandNextjs,
+  IconBrandNodejs,
   IconBrandPhp,
   IconBrandPython,
   IconBrandReact,
   IconBrandTailwind,
   IconBrandTypescript,
+  IconBroadcast,
+  IconDatabase,
+  IconNetwork,
+  IconRobot,
+  IconTerminal2,
 } from "@tabler/icons-react";
 import React from "react";
 
@@ -71,7 +80,7 @@ const python = {
 
 const node = {
   name: "Node.js",
-  icon: <IconBrandJavascript size={16} />,
+  icon: <IconBrandNodejs size={16} />,
 };
 
 const php = {
@@ -106,7 +115,7 @@ const mongodb = {
 
 const aws = {
   name: "AWS",
-  icon: <IconBrandAmazon size={16} />,
+  icon: <IconBrandAws size={16} />,
 };
 
 const firebase = {
@@ -117,6 +126,46 @@ const firebase = {
 const gcp = {
   name: "GCP",
   icon: <IconBrandGoogle size={16} />,
+};
+
+const fastapi = {
+  name: "FastAPI",
+  icon: <IconApi size={16} />,
+};
+
+const postgres = {
+  name: "PostgreSQL",
+  icon: <IconDatabase size={16} />,
+};
+
+const docker = {
+  name: "Docker",
+  icon: <IconBrandDocker size={16} />,
+};
+
+const linux = {
+  name: "Linux",
+  icon: <IconTerminal2 size={16} />,
+};
+
+const mqtt = {
+  name: "MQTT",
+  icon: <IconBroadcast size={16} />,
+};
+
+const cloudflare = {
+  name: "Cloudflare",
+  icon: <IconBrandCloudflare size={16} />,
+};
+
+const tailscale = {
+  name: "Tailscale",
+  icon: <IconNetwork size={16} />,
+};
+
+const ollama = {
+  name: "Ollama",
+  icon: <IconRobot size={16} />,
 };
 
 export const tech: Record<string, ITech> = {
@@ -139,4 +188,12 @@ export const tech: Record<string, ITech> = {
   aws,
   firebase,
   gcp,
+  fastapi,
+  postgres,
+  docker,
+  linux,
+  mqtt,
+  cloudflare,
+  tailscale,
+  ollama,
 };
